@@ -20,6 +20,8 @@ In this tutorial, we will
 git clone https://github.com/lucas-diedrich/snakemake-learning.git
 ```
 
+(or download it via `Code > Download ZIP`, and unzip it locally)
+
 3. Go into the directory
 
 ```shell 
