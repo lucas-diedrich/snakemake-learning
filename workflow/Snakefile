@@ -10,7 +10,7 @@ rule all:
 rule save_image:
     output:
         report("../results/astronaut.png", category="Input image")
-    shell: "mamba run -n spatialdata python scripts/create-data.py --image-name astronaut --output {output[0]}"
+    shell: "mamba run -n skimage python scripts/create-data.py --image-name astronaut --output {output[0]}"
 
 # Simple rule definition
 rule transform_image:
@@ -19,7 +19,7 @@ rule transform_image:
     output:
         report("../results/transformed-images/{transformation}.png", category="Transformed image")
     shell:
-        "mamba run -n spatialdata python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output[0]}"
+        "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output[0]}"
 
 # More complex rule definition with variables
 rule plot_histogram:
@@ -30,4 +30,4 @@ rule plot_histogram:
         # File names can be given a variable name which can be referenced in the "shell" command
         histogram_plot=report("../results/histograms/{transformation}_hist.png", category="Histogram")
     shell:
-        "mamba run -n spatialdata python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
+        "mamba run -n skimage python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
