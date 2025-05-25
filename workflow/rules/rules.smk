@@ -3,11 +3,9 @@ rule save_image:
     output:
         report("../results/astronaut.png", category="Input image"),
     log:
-        "../save_image/astronaut.log",
-    conda:
-        "./envs/environment.yaml"
+        "../logs/save_image/astronaut.log",
     shell:
-        "python scripts/create-data.py --image-name astronaut --output {output}"
+        "mamba run -n skimage python scripts/create-data.py --image-name astronaut --output {output}"
 
 
 # Simple rule definition
@@ -21,8 +19,6 @@ rule transform_image:
         ),
     log:
         "../transform_image/{transformation}.log",
-    conda:
-        "./envs/environment.yaml"
     shell:
         "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
 
@@ -39,7 +35,5 @@ rule plot_histogram:
         ),
     log:
         "../plot_histogram/{transformation}.log",
-    conda:
-        "./envs/environment.yaml"
     shell:
         "mamba run -n skimage python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
