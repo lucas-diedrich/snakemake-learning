@@ -3,11 +3,16 @@ GitHub Repository for the hands-on snakemake learn session at the MannLabs Group
 
 Snakemake is a python-based workflow manager that is supposed to make your life easier when analysing large datasets. It **enforces reproducibility** and **enables scalability**. 
 
+### Tutorial overview
+
 In this tutorial, we will 
 1. read in a dataset (here: a small image)
 2. process it with a simple function (here: apply different image transformations to it)
 3. generate a plot as output (here: histograms of pixel intensities)
 4. generate a snakemake report.
+
+
+![Results](./docs/img/results.png)
 
 
 ## Installation 
