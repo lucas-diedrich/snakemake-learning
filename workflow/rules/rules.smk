@@ -20,7 +20,7 @@ rule transform_image:
     conda:
         "./envs/environment.yaml"
     shell:
-        "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output[0]}"
+        "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
 
 
 # More complex rule definition with variables
