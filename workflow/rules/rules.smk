@@ -5,7 +5,7 @@ rule save_image:
     conda:
         "./envs/environment.yaml"
     shell:
-        "python scripts/create-data.py --image-name astronaut --output {output[0]}"
+        "python scripts/create-data.py --image-name astronaut --output {output}"
 
 
 # Simple rule definition
