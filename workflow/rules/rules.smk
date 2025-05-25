@@ -27,7 +27,7 @@ rule transform_image:
 rule plot_histogram:
     input:
         # We can define the input dynamically as output of a different rule
-        lambda wildcards: rules.transform_image.output[0],
+        lambda wildcards: rules.transform_image.output,
     output:
         # File names can be given a variable name which can be referenced in the "shell" command
         histogram_plot=report(
