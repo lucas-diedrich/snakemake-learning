@@ -173,7 +173,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-
+# Ignore snakemake repo
+.snakemake
 # Images, reports
 *.png
 *.html
