@@ -46,10 +46,50 @@ snakemake --version
 
 ## Tutorial
 
-Will be added soon...
+### 1. Snakemake - Introduction 
+
+See the slides in `./docs`
+
+### 2. Check out the workflow 
+
+Run the following command in the root directory (`.`) to se the whole task graph. 
+
+```shell
+# --dag: Directed acyclic graph
+# mermaid-js: A format to visualize graphs
+snakemake --dag mermaid-js
+```
+
+And the following command to inspect how the rules depend on one another (simpler than task graph, especially for large workflows)
+
+```shell
+# --rulegraph: Show dependencies between rules
+# mermaid-js: A format to visualize graphs
+snakemake --rulegraph mermaid-js
+```
+
+```mermaid 
+---
+title: DAG
+---
+flowchart TB
+        id0[all]
+        id1[plot_histogram]
+        id2[transform_image]
+        id3[save_image]
+        style id0 fill:#D95757,stroke-width:2px,color:#333333
+        style id1 fill:#D9D957,stroke-width:2px,color:#333333
+        style id2 fill:#57D9D9,stroke-width:2px,color:#333333
+        style id3 fill:#57D957,stroke-width:2px,color:#333333
+        id0 --> id0
+        id1 --> id0
+        id2 --> id0
+```
+
+And use the [`mermaid.live`](https://mermaid.live) editor to view the task graph
 
 ## References
 
-**Snakemake homepage + Documentation** [snakemake.readthedocs.io](https://snakemake.readthedocs.io/en/stable/index.html)
+- **Snakemake homepage + Documentation** [snakemake.readthedocs.io](https://snakemake.readthedocs.io/en/stable/index.html)
 
-**Publication** Mölder F, Jablonski KP, Letcher B et al. Sustainable data analysis with Snakemake [version 2; peer review: 2 approved]. F1000Research 2021, 10:33 (https://doi.org/10.12688/f1000research.29032.2)
+- **Publication** Mölder F, Jablonski KP, Letcher B et al. Sustainable data analysis with Snakemake [version 2; peer review: 2 approved]. F1000Research 2021, 10:33 (https://doi.org/10.12688/f1000research.29032.2)
