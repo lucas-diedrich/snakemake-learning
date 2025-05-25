@@ -2,6 +2,8 @@
 rule save_image:
     output:
         report("../results/astronaut.png", category="Input image"),
+    log:
+        "../save_image/astronaut.log",
     conda:
         "./envs/environment.yaml"
     shell:
@@ -17,6 +19,8 @@ rule transform_image:
             "../results/transformed-images/{transformation}.png",
             category="Transformed image",
         ),
+    log:
+        "../transform_image/{transformation}.log",
     conda:
         "./envs/environment.yaml"
     shell:
@@ -33,6 +37,8 @@ rule plot_histogram:
         histogram_plot=report(
             "../results/histograms/{transformation}_hist.png", category="Histogram"
         ),
+    log:
+        "../plot_histogram/{transformation}.log",
     conda:
         "./envs/environment.yaml"
     shell:
