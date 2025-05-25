@@ -20,4 +20,5 @@ dependencies:
   - wheel=0.45.1
   - pip:
     - snakemake==9.5.1
+    - Pygments==2.19.1
 
