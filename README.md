@@ -56,16 +56,14 @@ Run the following command in the root directory (`.`) to se the whole task graph
 
 ```shell
 # --dag: Directed acyclic graph
-# mermaid-js: A format to visualize graphs
-snakemake --dag mermaid-js
+snakemake --dag 
 ```
 
 And the following command to inspect how the rules depend on one another (simpler than task graph, especially for large workflows)
 
 ```shell
 # --rulegraph: Show dependencies between rules
-# mermaid-js: A format to visualize graphs
-snakemake --rulegraph mermaid-js
+snakemake --rulegraph
 ```
 
 ```mermaid 
@@ -83,10 +81,11 @@ flowchart TB
         style id3 fill:#57D957,stroke-width:2px,color:#333333
         id0 --> id0
         id1 --> id0
-        id2 --> id0
+        id2 --> id1
+        id3 --> id2
 ```
 
-And use the [`mermaid.live`](https://mermaid.live) editor to view the task graph
+You can use this [`grapviz visualizer`](https://dreampuf.github.io/GraphvizOnline/) editor to view the task graph
 
 ## References
 
