@@ -4,10 +4,10 @@ GitHub Repository for the hands-on snakemake learn session at the MannLabs Group
 Snakemake is a python-based workflow manager that is supposed to make your life easier when analysing large datasets. It **enforces reproducibility** and **enables scalability**. 
 
 In this tutorial, we will 
-1. read in a dataset
-2. process it with a simple function
-3. generate a plot as output
-4. generate a report. 
+1. read in a dataset (here: a small image)
+2. process it with a simple function (here: apply different image transformations to it)
+3. generate a plot as output (here: histograms of pixel intensities)
+4. generate a snakemake report.
 
 
 ## Installation 
@@ -68,17 +68,17 @@ snakemake --rulegraph
 
 ```mermaid 
 ---
-title: DAG
+title: Rule Graph
 ---
 flowchart TB
         id0[all]
         id1[plot_histogram]
         id2[transform_image]
         id3[save_image]
-        style id0 fill:#D95757,stroke-width:2px,color:#333333
-        style id1 fill:#D9D957,stroke-width:2px,color:#333333
-        style id2 fill:#57D9D9,stroke-width:2px,color:#333333
-        style id3 fill:#57D957,stroke-width:2px,color:#333333
+        style id0 fill:#CD5C5C,stroke-width:2px,color:#333333
+        style id1 fill:#F08080,stroke-width:2px,color:#333333
+        style id2 fill:#FA8072,stroke-width:2px,color:#333333
+        style id3 fill:#E9967A,stroke-width:2px,color:#333333
         id0 --> id0
         id1 --> id0
         id2 --> id1
@@ -86,6 +86,51 @@ flowchart TB
 ```
 
 You can use this [`grapviz visualizer`](https://dreampuf.github.io/GraphvizOnline/) editor to view the task graph
+
+
+### 3. Run the full workflow 
+
+Go in the `./workflow` directory and run:
+
+```shell
+snakemake --cores 2 
+```
+
+The output can be found in the `./results` directory
+
+### Generate the report 
+
+Go in the `./workflow` directory and run 
+
+```shell
+snakemake --report ../results/report.html
+```
+
+The output can be found in the `./results` directory
+
+
+## Exercises 
+
+*To further deepen your understanding after the workshop.*
+
+### 1. Scale the workflow to other images 
+
+The script `create-data.py` can take image names (that are part of the `skimage` package) as arguments. 
+
+```shell
+python scripts/create-data.py --image-name <image name> --output <output name>
+```
+Modify the workflow in a way that it also (=in addition) runs on other `skimage` example datasets, e.g. `colorwheel, cat, logo`
+
+### 2. Add a rule 
+
+Add a new rule in which you generate an aggregated plot - where the image and its modifications are shown in the top row and the associated histograms are shown in the bottom row. 
+
+
+### 3. Prettify the report
+
+Explore possibilities to modify the report with the rich structured text format. 
+
 
 ## References
 
