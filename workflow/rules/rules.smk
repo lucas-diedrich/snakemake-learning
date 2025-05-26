@@ -4,8 +4,10 @@ rule save_image:
         report("../results/astronaut.png", category="Input image"),
     log:
         "../logs/save_image/astronaut.log",
+    conda:
+        "envs/environment.yaml"
     shell:
-        "mamba run -n skimage python scripts/create-data.py --image-name astronaut --output {output}"
+        "python scripts/create-data.py --image-name astronaut --output {output}"
 
 
 # Simple rule definition
@@ -19,8 +21,10 @@ rule transform_image:
         ),
     log:
         "../transform_image/{transformation}.log",
+    conda:
+        "envs/environment.yaml"
     shell:
-        "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
+        "python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
 
 
 # More complex rule definition with variables
@@ -35,5 +39,7 @@ rule plot_histogram:
         ),
     log:
         "../plot_histogram/{transformation}.log",
+    conda:
+        "envs/environment.yaml"
     shell:
-        "mamba run -n skimage python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
+        "python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"

@@ -50,13 +50,6 @@ snakemake --version
 > 9.5.1
 ```
 
-
-6. Create a second environment called `skimage` based on the environment file in `./workflow/envs`
-
-```shell
-mamba create -n skimage --file workflow/envs/environment.yaml
-```
-
 ## Tutorial
 
 ### 1. Snakemake - Introduction 
@@ -106,7 +99,7 @@ You can use this [`grapviz visualizer`](https://dreampuf.github.io/GraphvizOnlin
 Go in the `./workflow` directory and run:
 
 ```shell
-snakemake --cores 2 
+snakemake --cores 2 --use-conda
 ```
 
 The output can be found in the `./results` directory
