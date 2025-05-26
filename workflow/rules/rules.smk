@@ -5,7 +5,7 @@ rule save_image:
     log:
         "../logs/save_image/astronaut.log",
     shell:
-        "mamba run -n skimage python scripts/create-data.py --image-name astronaut --output {output}"
+        "conda run -n skimage python scripts/create-data.py --image-name astronaut --output {output}"
 
 
 # Simple rule definition
@@ -20,7 +20,7 @@ rule transform_image:
     log:
         "../transform_image/{transformation}.log",
     shell:
-        "mamba run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
+        "conda run -n skimage python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
 
 
 # More complex rule definition with variables
@@ -36,4 +36,4 @@ rule plot_histogram:
     log:
         "../plot_histogram/{transformation}.log",
     shell:
-        "mamba run -n skimage python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
+        "conda run -n skimage python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"

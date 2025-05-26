@@ -17,7 +17,7 @@ In this tutorial, we will
 
 ## Installation 
 
-**The instructions were minimally modified to enable useres with mamba installataons to follow along**
+**The instructions were minimally modified to enable users with conda installations to follow along**
 
 1. Using the command line, go into your favorite directory (`cd /path/to/my/favorite/directory`)
 
@@ -35,12 +35,10 @@ git clone https://github.com/lucas-diedrich/snakemake-learning.git
 cd snakemake-learning
 ```
 
-4. Create a `conda`/`mamba` environment with snakemake based on the `environemnt.yaml` file and activate it
+4. Create a `conda` environment with snakemake based on the `environemnt.yaml` file and activate it
 
 ```shell 
-mamba create -n snakemake-env --file environment.yaml && mamba activate snakemake-env
-
-# OR conda create -n snakemake-env --file environment.yaml && conda activate snakemake-env
+conda create -n snakemake-env --file environment.yaml && conda activate snakemake-env
 ```
 
 5. Check if the installation was successful
@@ -54,7 +52,7 @@ snakemake --version
 6. Create a second environment called `skimage` based on the environment file in `./workflow/envs`
 
 ```shell
-mamba create -n skimage --file workflow/envs/environment.yaml
+conda create -n skimage --file workflow/envs/environment.yaml
 ```
 
 ## Tutorial
