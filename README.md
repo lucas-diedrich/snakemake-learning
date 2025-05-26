@@ -17,6 +17,8 @@ In this tutorial, we will
 
 ## Installation 
 
+**The instructions were minimally modified to enable useres with mamba installataons to follow along**
+
 1. Using the command line, go into your favorite directory (`cd /path/to/my/favorite/directory`)
 
 2. Clone this repository 
@@ -48,6 +50,12 @@ snakemake --version
 > 9.5.1
 ```
 
+
+6. Create a second environment called `skimage` based on the environment file in `./workflow/envs`
+
+```shell
+mamba create -n skimage --file workflow/envs/environment.yaml
+```
 
 ## Tutorial
 
