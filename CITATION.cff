@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Snakemake Tutorial
+message: A short introduction to snakemake
+type: software
+authors:
+  - given-names: Lucas
+    family-names: Diedrich
+    email: diedrich@biochem.mpg.de
+    affiliation: 'Max Planck Institute for Biochemistry '
+    orcid: 'https://orcid.org/0009-0007-4884-1422'
+repository-code: 'https://github.com/lucas-diedrich/snakemake-learning.git'
+url: 'https://github.com/lucas-diedrich/snakemake-learning.git'
+abstract: Introduction to snakemake
+keywords:
+  - snakemake
+  - tutorial
+license: MIT
