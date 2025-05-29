@@ -17,7 +17,7 @@ In this tutorial, we will
 
 ## Installation 
 
-**The instructions were minimally modified to enable useres with mamba installataons to follow along**
+**The instructions need to be minimally modified to enable users with mamba installations to follow along. Please use the branch _mamba-local_ and follow along the installation instructions on that branch, if you do not have `conda` available on your system**
 
 1. Using the command line, go into your favorite directory (`cd /path/to/my/favorite/directory`)
 
