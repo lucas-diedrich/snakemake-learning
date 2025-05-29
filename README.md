@@ -35,12 +35,10 @@ git clone https://github.com/lucas-diedrich/snakemake-learning.git
 cd snakemake-learning
 ```
 
-4. Create a `conda`/`mamba` environment with snakemake based on the `environemnt.yaml` file and activate it
+4. Create a `conda`environment with snakemake based on the `environment.yaml` file and activate it
 
 ```shell 
-mamba create -n snakemake-env --file environment.yaml && mamba activate snakemake-env
-
-# OR conda create -n snakemake-env --file environment.yaml && conda activate snakemake-env
+conda env create -f environment.yaml && conda activate snakemake-env
 ```
 
 5. Check if the installation was successful
