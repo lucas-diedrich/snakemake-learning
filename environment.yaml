@@ -4,6 +4,7 @@ channels:
 dependencies:
   - bzip2=1.0.8
   - ca-certificates=2025.4.26
+  - conda=25.5.1
   - libexpat=2.7.0
   - libffi=3.4.6
   - liblzma=5.8.1
