@@ -17,8 +17,6 @@ In this tutorial, we will
 
 ## Installation 
 
-**The instructions need to be minimally modified to enable users with mamba installations to follow along. Please use the branch _mamba-local_ and follow along the installation instructions on that branch, if you do not have `conda` available on your system**
-
 1. Using the command line, go into your favorite directory (`cd /path/to/my/favorite/directory`)
 
 2. Clone this repository 
@@ -35,10 +33,12 @@ git clone https://github.com/lucas-diedrich/snakemake-learning.git
 cd snakemake-learning
 ```
 
-4. Create a `conda`environment with snakemake based on the `environment.yaml` file and activate it
+4. Create a `mamba`/`conda` environment with snakemake based on the `environment.yaml` file and activate it
 
 ```shell 
-conda env create -f environment.yaml && conda activate snakemake-env
+mamba create -n snakemake-env --file environment.yaml && mamba activate snakemake-env
+
+# OR conda env create -f environment.yaml && conda activate snakemake-env
 ```
 
 5. Check if the installation was successful
