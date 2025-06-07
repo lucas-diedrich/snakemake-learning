@@ -5,7 +5,7 @@ rule save_image:
     log:
         "../logs/save_image/astronaut.log",
     conda:
-        "envs/environment.yaml"
+        "../envs/environment.yaml"
     shell:
         "python scripts/create-data.py --image-name astronaut --output {output}"
 
@@ -22,7 +22,7 @@ rule transform_image:
     log:
         "../transform_image/{transformation}.log",
     conda:
-        "envs/environment.yaml"
+        "../envs/environment.yaml"
     shell:
         "python scripts/transform.py --image {input} --transformation {wildcards.transformation} --output {output}"
 
@@ -40,6 +40,6 @@ rule plot_histogram:
     log:
         "../plot_histogram/{transformation}.log",
     conda:
-        "envs/environment.yaml"
+        "../envs/environment.yaml"
     shell:
         "python scripts/plot-histogram.py --image {input} --title astronaut --output {output.histogram_plot}"
