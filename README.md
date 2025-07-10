@@ -113,6 +113,30 @@ snakemake --report ../results/report.html
 The output can be found in the `./results` directory
 
 
+
+## Run on a slurm HPC cluster
+You can run this workflow on an high-performance computing cluster
+
+Install the environment 
+
+```
+conda create -n snakemake-env --file environment.yaml && conda activate snakemake-env
+```
+
+Additionally install the `snakemake-executor-plugin-slurm`:
+
+```shell
+pip install snakemake-executor-plugin-slurm
+```
+
+Then submit the provided workflow script on a cluster
+
+```shell
+cd /workflow/
+sbatch snakemake.sbatch
+```
+
+
 ## Exercises 
 
 *To further deepen your understanding after the workshop.*
