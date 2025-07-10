@@ -20,7 +20,7 @@ rule transform_image:
             category="Transformed image",
         ),
     log:
-        "../transform_image/{transformation}.log",
+        "../logs/transform_image/{transformation}.log",
     conda:
         "../envs/environment.yaml"
     shell:
@@ -38,7 +38,7 @@ rule plot_histogram:
             "../results/histograms/{transformation}_hist.png", category="Histogram"
         ),
     log:
-        "../plot_histogram/{transformation}.log",
+        "../logs/plot_histogram/{transformation}.log",
     conda:
         "../envs/environment.yaml"
     shell:
