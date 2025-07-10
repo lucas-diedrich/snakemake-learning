@@ -1,3 +1,4 @@
+#!/usr/bin/bash 
 
 conda activate snakemake-env
 
