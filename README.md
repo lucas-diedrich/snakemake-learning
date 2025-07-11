@@ -115,12 +115,16 @@ The output can be found in the `./results` directory
 
 
 ## Run on a slurm HPC cluster
-You can run this workflow on an high-performance computing cluster
+You can run this workflow on an high-performance computing cluster (_here leveraging the slurm manager_). In this case, one slurm job acts as a scheduler that submits individual rule executions as separate slurm jobs. The `snakemake-executor-plugin-slurm` automatically handles the scheduling and submission of dependent jobs. Please checkout the script `/workflow/snakemake.sbatch` and the official [snakemake slurm plugin documentation](https://snakemake.github.io/snakemake-plugin-catalog/plugins/executor/slurm.html#snakemake-executor-plugin-slurm) to learn more about the relevant flags and settings.
+
+
+### Exeuction
 
 Install the environment 
 
 ```
-conda create -n snakemake-env --file environment.yaml && conda activate snakemake-env
+conda create -n snakemake-env -y
+conda env update --n snakemake-env --file environment.yaml
 ```
 
 Additionally install the `snakemake-executor-plugin-slurm`:
